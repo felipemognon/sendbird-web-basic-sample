@@ -236,6 +236,7 @@ class SendBirdAction {
     return new Promise((resolve, reject) => {
       let params = new this.sb.GroupChannelParams();
       params.addUserIds(userIds);
+      params.customType = 'Felipe'; // <<Assessment 2>> 1. setting custom type value as your first name
       this.sb.GroupChannel.createChannel(params, (groupChannel, error) => {
         error ? reject(error) : resolve(groupChannel);
       });

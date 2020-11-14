@@ -27,7 +27,8 @@ class LeftListItem {
       ? `# ${this.channel.name}`
       : this.channel.members
           .map(member => {
-            return protectFromXSS(member.nickname);
+            // <<Assessment 2>> 2. change sample app code so that it will display joined user nickname and custom type as well in the channelTitle (e.g. one (John)), if the channel has custom type value, in the “Group channels” list.
+            return protectFromXSS(this.channel.customType ? member.nickname + ` (${this.channel.customType})` : member.nickname); 
           })
           .join(', ');
   }
