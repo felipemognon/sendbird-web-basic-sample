@@ -70,6 +70,10 @@ class Chat {
     const channelEvent = new SendBirdChatEvent();
     channelEvent.onMessageReceived = (channel, message) => {
       if (this.channel.url === channel.url) {
+        // <<Assessment 4>> If a message includes ‘sendbird’ in a group channel, pop up an alert window with ‘sendbird’ string
+        if ( message && message.message.includes('sendbird')) {
+          window.alert('sendbird');
+        }
         this.main.renderMessages([message], false);
       }
     };
