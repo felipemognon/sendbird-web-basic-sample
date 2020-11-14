@@ -218,7 +218,7 @@ class SendBirdAction {
     if (isInit || isNull(this.groupChannelQuery)) {
       this.groupChannelQuery = this.sb.GroupChannel.createMyGroupChannelListQuery();
       this.groupChannelQuery.limit = 50;
-      this.groupChannelQuery.includeEmpty = false;
+      this.groupChannelQuery.includeEmpty = false; // Bonus 2 question - we can list channels without message by changing this variable to true.
       this.groupChannelQuery.order = 'latest_last_message';
       // <<Assessment 3>> Change sample app code so that it will list only channels with custom type value and not list channels without custom type value by setting custom type filter in my group channel list query in the reference of our guide pages.
       this.groupChannelQuery.customTypesFilter = ['Felipe'];
